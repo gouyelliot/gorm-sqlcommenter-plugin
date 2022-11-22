@@ -1,6 +1,6 @@
 <h2 align="center">GORM SQLCommenter Plugin</h2>
 
-This plugin adds a new clause on GORM statement builder, allowing to tags using the [SQLCommenter](https://google.github.io/sqlcommenter/) tagging protocol.
+This plugin adds a new clause on GORM statement builder, allowing you to add tags to your requests using the [SQLCommenter](https://google.github.io/sqlcommenter/) protocol.
 
 ### How to use
 

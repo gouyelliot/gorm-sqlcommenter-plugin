@@ -56,6 +56,13 @@ func (sqlComment SqlComment) MergeClause(mergeClause *clause.Clause) {
 	mergeClause.Expression = sqlComment
 }
 
+func (sqlComment SqlComment) AddTag(key string, value string) {
+	if sqlComment.Tags == nil {
+		sqlComment.Tags = make(map[string]string, 1)
+	}
+	sqlComment.Tags[key] = value
+}
+
 func escapeKey(key string) string {
 	return url.PathEscape(key)
 }

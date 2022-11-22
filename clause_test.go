@@ -40,7 +40,7 @@ func TestQuery(t *testing.T) {
 			want: "SELECT * FROM `test` /*%27%20%2Fapplication%2F%20%27='value'*/",
 		},
 		{
-			name: "Escape value",
+			name: "EscapeValue",
 			operation: func(db *gorm.DB) *gorm.DB {
 				return db.
 					Clauses(NewTags(map[string]string{"application": "'  value  '"})).
@@ -49,7 +49,7 @@ func TestQuery(t *testing.T) {
 			want: "SELECT * FROM `test` /*application='%27%20%20value%20%20%27'*/",
 		},
 		{
-			name: "Merge clause",
+			name: "MergeClause",
 			operation: func(db *gorm.DB) *gorm.DB {
 				return db.
 					Clauses(NewTags(map[string]string{"application": "value"})).
@@ -124,7 +124,7 @@ func TestCreate(t *testing.T) {
 			},
 		},
 		{
-			name: "Escape value",
+			name: "EscapeValue",
 			operation: func(db *gorm.DB) *gorm.DB {
 				return db.
 					Clauses(NewTags(map[string]string{"application": "'  value  '"})).
@@ -137,7 +137,7 @@ func TestCreate(t *testing.T) {
 			},
 		},
 		{
-			name: "Merge clause",
+			name: "MergeClause",
 			operation: func(db *gorm.DB) *gorm.DB {
 				return db.
 					Clauses(NewTags(map[string]string{"application": "value"})).
@@ -212,7 +212,7 @@ func TestUpdate(t *testing.T) {
 			},
 		},
 		{
-			name: "Escape value",
+			name: "EscapeValue",
 			operation: func(db *gorm.DB) *gorm.DB {
 				return db.
 					Clauses(NewTags(map[string]string{"application": "'  value  '"})).
@@ -225,7 +225,7 @@ func TestUpdate(t *testing.T) {
 			},
 		},
 		{
-			name: "Merge clause",
+			name: "MergeClause",
 			operation: func(db *gorm.DB) *gorm.DB {
 				return db.
 					Clauses(NewTags(map[string]string{"application": "value"})).
@@ -298,7 +298,7 @@ func TestDelete(t *testing.T) {
 			},
 		},
 		{
-			name: "Escape value",
+			name: "EscapeValue",
 			operation: func(db *gorm.DB) *gorm.DB {
 				return db.
 					Clauses(NewTags(map[string]string{"application": "'  value  '"})).
@@ -310,7 +310,7 @@ func TestDelete(t *testing.T) {
 			},
 		},
 		{
-			name: "Merge clause",
+			name: "MergeClause",
 			operation: func(db *gorm.DB) *gorm.DB {
 				return db.
 					Clauses(NewTags(map[string]string{"application": "value"})).
